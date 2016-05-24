@@ -134,7 +134,7 @@ class ResPartner(models.Model):
             parts = name.strip().split(" ", 1)
             while len(parts) < 2:
                 parts.append(False)
-        return {"lastname": parts[0], "firstname": parts[1]}
+        return {"lastname": parts[1], "firstname": parts[0]} # SWAPPED ORDER now expecting format of "firstname lastname"
 
     @api.one
     def _inverse_name(self):
